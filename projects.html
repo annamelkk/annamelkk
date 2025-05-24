@@ -11,13 +11,12 @@
     <style>
         /* Global Styles */
         :root {
-            --primary-color: #2563EB;
-            --dark-blue: #0f172a;
+            --primary-color: #7293d8;
+            --dark-blue: #0b1121;
             --light-blue: #dbeafe;
-            --aerospace-blue: #1e3a8a;
-            --electrical-purple: #4338ca;
-            --mechanical-green: #065f46;
-            --software-orange: #ea580c;
+            --aerospace-blue: #0b1121;
+            --electrical-purple: #7293d8;
+            --mechanical-pink: #ff8599;
             --text-color: #1e293b;
             --light-text: #64748b;
         }
@@ -198,7 +197,7 @@
         }
         
         .filter-btn.mechanical.active {
-            background-color: var(--mechanical-green);
+            background-color: var(--mechanical-pink);
         }
         
         .filter-btn.software.active {
@@ -249,7 +248,7 @@
         }
         
         .project-card[data-category="mechanical"] .project-image {
-            background: linear-gradient(135deg, var(--mechanical-green), #059669);
+            background: linear-gradient(135deg, var(--mechanical-pink), #960541);
         }
         
         .project-card[data-category="software"] .project-image {
@@ -411,10 +410,6 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <div class="icon">+</div>
-                ENGINEER
-            </a>
             <nav>
                 <ul>
                     <li><a href="index.html#about">About</a></li>
@@ -442,7 +437,6 @@
                 <a href="#" class="filter-btn aerospace" data-filter="aerospace">Aerospace</a>
                 <a href="#" class="filter-btn electrical" data-filter="electrical">Electrical</a>
                 <a href="#" class="filter-btn mechanical" data-filter="mechanical">Mechanical</a>
-                <a href="#" class="filter-btn software" data-filter="software">Software</a>
             </div>
         </div>
     </section>
@@ -681,195 +675,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card" data-category="software">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                                    <div class="project-card" data-category="software">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <div>
-                                <h3 class="project-title">Engineering Dashboard</h3>
-                                <span class="project-category software">Software</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Created a comprehensive data visualization platform for real-time monitoring of engineering systems and performance metrics.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">Data Visualization</span>
-                            <span class="project-tag">API Integration</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">2024</span>
-                            <a href="project-dashboard.html" class="project-link">
-                                View Details
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More Software Projects -->
-                <div class="project-card" data-category="software">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <div>
-                                <h3 class="project-title">ML Predictive Maintenance</h3>
-                                <span class="project-category software">Software</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Implemented machine learning algorithms to predict equipment failures and optimize maintenance schedules for industrial systems.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">TensorFlow</span>
-                            <span class="project-tag">Data Analysis</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">2023</span>
-                            <a href="project-predictive-maintenance.html" class="project-link">
-                                View Details
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Projects for completeness -->
-                <div class="project-card" data-category="electrical">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V8.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 18 15.5V15.5A3.5 3.5 0 0 1 14.5 19H6" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <div>
-                                <h3 class="project-title">Wireless Charging Station</h3>
-                                <span class="project-category electrical">Electrical</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Designed an efficient wireless power transfer system for electric vehicle charging with safety protocols and user interface.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Wireless Power</span>
-                            <span class="project-tag">Coil Design</span>
-                            <span class="project-tag">Safety Systems</span>
-                            <span class="project-tag">C++</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">2022</span>
-                            <a href="project-wireless-charging.html" class="project-link">
-                                View Details
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="aerospace">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 12H7V22H17V12H22L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <div>
-                                <h3 class="project-title">Rocket Engine Model</h3>
-                                <span class="project-category aerospace">Aerospace</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Developed a computational model for liquid rocket engine performance analysis and optimization with thrust vector control.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Propulsion</span>
-                            <span class="project-tag">Thermodynamics</span>
-                            <span class="project-tag">Simulation</span>
-                            <span class="project-tag">MATLAB</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">2022</span>
-                            <a href="project-rocket-engine.html" class="project-link">
-                                View Details
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="mechanical">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <div>
-                                <h3 class="project-title">Heat Exchanger Design</h3>
-                                <span class="project-category mechanical">Mechanical</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Optimized heat exchanger design for industrial applications using thermal analysis and fluid dynamics simulations.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Heat Transfer</span>
-                            <span class="project-tag">Thermal Analysis</span>
-                            <span class="project-tag">SolidWorks</span>
-                            <span class="project-tag">FEA</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">2021</span>
-                            <a href="project-heat-exchanger.html" class="project-link">
-                                View Details
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
