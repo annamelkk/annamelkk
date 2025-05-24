@@ -17,9 +17,9 @@
             --primary-color: #7293d8;
             --dark-blue: #0b1121;
             --light-blue: #dbeafe;
-            --aerospace-blue: #1e3a8a;
-            --electrical-purple: #4338ca;
-            --mechanical-green: #065f46;
+            --aerospace-blue: #0b1121;
+            --electrical-purple: #7293d8;
+            --mechanical-pink: #ff8599;
             --text-color: #1e293b;
             --light-text: #64748b;
         }
@@ -93,15 +93,7 @@
             position: relative;
             display: inline-block;
         }
-        
-        .section-header h2::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 8px auto 0;
-        }
+
         
         .section-header p {
             color: var(--light-text);
@@ -187,9 +179,8 @@
         
         .hero-image {
             position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-125%);
+            right: 20%;
+            top: 15%;
         }
         
         /* About Section */
@@ -204,6 +195,8 @@
         }
         
         .about-image {
+            height: min-content;
+            width: min-content;
             flex: 0 0 40%;
             border-radius: 20px;
             overflow: hidden;
@@ -271,7 +264,7 @@
         }
         
         .project-card:nth-child(3) .project-image {
-            background-color: var(--mechanical-green);
+            background-color: var(--mechanical-pink);
         }
         
         .project-icon {
@@ -380,7 +373,7 @@
         }
         
         .skill-card:nth-child(3) h3 {
-            color: var(--mechanical-green);
+            color: var(--mechanical-pink);
         }
         
         .skill-list {
@@ -684,11 +677,7 @@
             </div>
             <div class="about-container">
                 <div class="about-image">
-                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="100" fill="#dbeafe" />
-                        <circle cx="100" cy="80" r="30" fill="#3b82f6" />
-                        <path d="M100 120C77.9 120 60 137.9 60 160V200H140V160C140 137.9 122.1 120 100 120Z" fill="#3b82f6" />
-                    </svg>
+                    <img height="500px" src="/images/my_image.jpg" alt="">
                 </div>
                 <div class="about-content">
                     <h3 class="about-title">Engineering Enthusiast</h3>
@@ -696,16 +685,20 @@
                         I am a passionate engineering student with a focus on 
                         aerospace, electrical, and mechanical engineering. My 
                         interdisciplinary approach allows me to tackle complex 
-                        problems with innovative solutions that span multiple 
+                        problems with solutions that span multiple 
                         engineering domains.
                     </p>
                     <p>
                         With a strong foundation in theoretical principles and 
-                        hands-on experience, I strive to create projects that push 
+                        hands-on experience, I want to create projects that push 
                         the boundaries of what's possible in engineering. I'm 
-                        particularly interested in sustainable technology, 
-                        robotics, and advanced propulsion systems.
+                        particularly interested in robotics, and advanced propulsion systems.
                     </p>
+                    <p>
+                        On top of my technical skills, I am also an avidhobbyist. I love drawing 
+                        and design, lamguage learning and travelling!
+                    </p>
+
                     <div class="about-tags">
                         <span class="tag">Problem Solver</span>
                         <span class="tag">Innovator</span>
@@ -735,7 +728,7 @@
                         </svg>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Micro Satellite Design</h3>
+                        <h3 class="project-title">Micro Satellite (in progress)</h3>
                         <span class="project-category">Aerospace</span>
                         <p>
                             Designed and prototyped a CubeSat platform with novel 
@@ -773,15 +766,14 @@
                         </svg>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Smart Energy Monitor</h3>
+                        <h3 class="project-title">Tweaked Nebulaphone (in progress)</h3>
                         <span class="project-category">Electrical</span>
                         <p>
-                            Developed an IoT-based energy monitoring system for 
-                            optimizing power consumption in residential buildings.
+                            Using BleepLab's Nebulaphone design as a base for my own synth
+                            design.
                         </p>
                         <div class="project-tags">
                             <span class="project-tag">Microcontrollers</span>
-                            <span class="project-tag">PCB Design</span>
                             <span class="project-tag">IoT</span>
                         </div>
                         <a href="#" class="project-link">
@@ -803,16 +795,15 @@
                         </svg>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Autonomous Drone</h3>
+                        <h3 class="project-title">Mechanics Course Notes</h3>
                         <span class="project-category">Mechanical</span>
                         <p>
-                            Built a lightweight autonomous drone with custom frame 
-                            design and advanced navigation capabilities.
+                            Created and formatted a set of mechanics lectures
+                            by Pavel Viktor.
                         </p>
                         <div class="project-tags">
-                            <span class="project-tag">3D Printing</span>
-                            <span class="project-tag">Flight Control</span>
-                            <span class="project-tag">CAD</span>
+                            <span class="project-tag">LaTex</span>
+                            <span class="project-tag">Mechanics
                         </div>
                         <a href="#" class="project-link">
                             View Details
@@ -851,10 +842,10 @@
                                 <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Aerospace
+                            Aerospace (in progress)
                         </h3>
                         <ul class="skill-list">
-                            <li>Aerodynamics & Fluid Mechanics</li>
+                            <li>Aerodynamics</li>
                             <li>Propulsion Systems</li>
                             <li>Orbital Mechanics</li>
                             <li>Spacecraft Design</li>
@@ -873,8 +864,7 @@
                         <ul class="skill-list">
                             <li>Circuit Design & Analysis</li>
                             <li>Microcontroller Programming</li>
-                            <li>PCB Design & Fabrication</li>
-                            <li>Power Electronics</li>
+                            <li>PCB Design</li>
                             <li>Embedded Systems</li>
                         </ul>
                     </div>
@@ -893,11 +883,10 @@
                             Mechanical
                         </h3>
                         <ul class="skill-list">
-                            <li>CAD/CAM (SolidWorks, Fusion 360)</li>
-                            <li>3D Printing & Rapid Prototyping</li>
-                            <li>Structural Analysis (FEA)</li>
-                            <li>Thermodynamics</li>
-                            <li>Robotics & Control Systems</li>
+                            <li>CAD (SolidWorks, AutoCAD, 3ds Max)</li>
+                            <li>3D Printing & Prototyping</li>
+                            <li>Structural Analysis</li>
+                            <li>Dynamics</li>
                         </ul>
                     </div>
                 </div>
@@ -1035,7 +1024,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Engineering Portfolio. All rights reserved.</p>
+            <p>&copy; 2025 Anna's Portfolio. All rights reserved.</p>
         </div>
     </footer>
 </body>
