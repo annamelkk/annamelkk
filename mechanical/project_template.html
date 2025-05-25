@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Anna's Engineering Portfolio</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #7293d8;
+            --dark-blue: #0b1121;
+            --light-blue: #dbeafe;
+            --aerospace-blue: #0b1121;
+            --electrical-purple: #7293d8;
+            --mechanical-pink: #ff8599;
+            --text-color: #1e293b;
+            --light-text: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato';
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-back {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+        
+        .btn-back:hover {
+            background-color: var(--text-color);
+            color: white;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Project Hero Section */
+        .project-hero {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .project-hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+        
+        .project-summary {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .meta-item h4 {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .meta-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .project-hero-image {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-hero-icon {
+            width: 120px;
+            height: 120px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        /* Project Content */
+        .project-content {
+            background-color: white;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+        
+        .main-content {
+            background-color: white;
+        }
+        
+        .content-section {
+            margin-bottom: 50px;
+        }
+        
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text-color);
+        }
+        
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-image {
+            background-color: #f8fafc;
+            border-radius: 10px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-style: italic;
+        }
+        
+        .code-block {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-card {
+            background-color: #f8fafc;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar-card h3 {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-blue);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .project-link:last-child {
+            border-bottom: none;
+        }
+        
+        .project-link svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .project-link:hover {
+            color: var(--dark-blue);
+        }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+        
+        /* Related Projects */
+        .related-projects {
+            background-color: #f8fafc;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .related-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .related-image {
+            height: 150px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .related-content {
+            padding: 25px;
+        }
+        
+        .related-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        
+        .related-category {
+            display: inline-block;
+            background-color: var(--light-blue);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .project-title {
+                font-size: 2.5rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Anna Melkonyan</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Micro Satellite
+            </div>
+            <div class="project-hero-content">
+                <div>
+                    <h1 class="project-title">Micro Satellite</h1>
+                    <span class="project-category">Aerospace Engineering</span>
+                    <p class="project-summary">
+                        Designing and prototyping a CubeSat platform with novel power management 
+                        systems and advanced communication capabilities for low Earth orbit missions.
+                    </p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <h4>Status</h4>
+                            <p>In Progress</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Timeline</h4>
+                            <p>6 months</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Team Size</h4>
+                            <p>4 members</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <a href="#content" class="btn btn-primary">Read More</a>
+                        <a href="index.html" class="btn btn-back">← Back to Portfolio</a>
+                    </div>
+                </div>
+                <div class="project-hero-image">
+                    <svg class="project-hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section id="content" class="project-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <!-- Overview -->
+                    <div class="content-section">
+                        <h2>Project Overview</h2>
+                        <p>
+                            The Micro Satellite project represents a comprehensive approach to small satellite design, 
+                            focusing on creating a cost-effective CubeSat platform that can serve multiple mission 
+                            profiles. Our design emphasizes modularity, reliability, and innovative power management 
+                            to extend mission duration and capability.
+                        </p>
+                        <p>
+                            This project combines theoretical aerospace engineering principles with hands-on 
+                            prototyping and testing, providing valuable experience in systems integration, 
+                            orbital mechanics, and space-qualified component selection.
+                        </p>
+                    </div>
+
+                    <!-- Technical Challenges -->
+                    <div class="content-section">
+                        <h2>Technical Challenges</h2>
+                        <h3>Power Management System</h3>
+                        <p>
+                            Developing an efficient power management system for the harsh space environment 
+                            required careful consideration of solar panel placement, battery chemistry, and 
+                            power distribution architecture.
+                        </p>
+                        
+                        <h3>Communication Subsystem</h3>
+                        <p>
+                            Implementing reliable communication with ground stations while managing power 
+                            constraints and antenna deployment mechanisms in a compact form factor.
+                        </p>
+                        
+                        <h3>Thermal Management</h3>
+                        <p>
+                            Ensuring all components operate within temperature ranges despite extreme 
+                            thermal cycling in low Earth orbit.
+                        </p>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="content-section">
+                        <h2>Key Features</h2>
+                        <ul class="features-list">
+                            <li>3U CubeSat form factor with modular payload bay</li>
+                            <li>Advanced lithium-ion battery management system</li>
+                            <li>Deployable solar panel arrays with MPPT controllers</li>
+                            <li>S-band communication system with ground station compatibility</li>
+                            <li>Attitude determination and control system (ADCS)</li>
+                            <li>Onboard flight computer with redundant systems</li>
+                            <li>Custom PCB design for space-qualified components</li>
+                        </ul>
+                    </div>
+
+                    <!-- Development Process -->
+                    <div class="content-section">
+                        <h2>Development Process</h2>
+                        <h3>Phase 1: Requirements Analysis</h3>
+                        <p>
+                            Conducted thorough mission requirements analysis, including orbit selection, 
+                            payload requirements, and regulatory compliance for space missions.
+                        </p>
+                        
+                        <h3>Phase 2: System Design</h3>
+                        <p>
+                            Created detailed system architecture diagrams, component specifications, 
+                            and interface control documents for all subsystems.
+                        </p>
+                        
+                        <h3>Phase 3: Prototyping & Testing</h3>
+                        <p>
+                            Built and tested individual subsystems, followed by integration testing 
+                            and environmental qualification procedures.
+                        </p>
+                    </div>
+
+                    <!-- Code Example -->
+                    <div class="content-section">
+                        <h2>Flight Software Example</h2>
+                        <p>Sample code from our attitude control system:</p>
+                        <div class="code-block">
+                            <pre>
+// Attitude Control System - Main Loop
+void attitude_control_loop() {
+    // Read sensor data
+    Vector3 gyro_data = read_gyroscope();
+    Vector3 mag_data = read_magnetometer();
+    
+    // Estimate current attitude
+    Quaternion current_attitude = estimate_attitude(gyro_data, mag_data);
+    
+    // Calculate control commands
+    Vector3 control_torque = calculate_control_torque(
+        current_attitude, 
+        target_attitude
+    );
+    
+    // Apply control to reaction wheels
+    apply_wheel_torque(control_torque);
+}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="content-section">
+                        <h2>Current Progress & Results</h2>
+                        <p>
+                            The project has successfully completed the preliminary design review and 
+                            is currently in the detailed design and prototyping phase. Key accomplishments 
+                            include successful testing of the power management system and initial 
+                            communication link establishment.
+                        </p>
+                        <div class="image-gallery">
+                            <div class="gallery-image">
+                                Prototype Assembly
+                            </div>
+                            <div class="gallery-image">
+                                PCB Design Render
+                            </div>
+                            <div class="gallery-image">
+                                Testing Setup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Technologies Used -->
+                    <div class="sidebar-card">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C/C++</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">KiCad</span>
+                            <span class="tech-tag">FreeRTOS</span>
+                            <span class="tech-tag">STM32</span>
+                            <span class="tech-tag">RF Design</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Links -->
+                    <div class="sidebar-card">
+                        <h3>Project Resources</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19C4.58172 19 1 15.4183 1 11C1 6.58172 4.58172 3 9 3C13.4183 3 17 6.58172 17 11C17 12.5 16.5 14 15.5 15L21 20.5L18.5 23L13 17.5C12 18.5 10.5 19 9 19Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                GitHub Repository
+                            </a>
+                            <a href="#" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Technical Documentation
+                            </a>
+                            <a href="#" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8 14S9.5 16 12 16S16 14 16 14" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="9" y1="9" x2="9.01" y2="9" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="15" y1="9" x2="15.01" y2="9" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Stats -->
+                    <div class="sidebar-card">
+                        <h3>Project Statistics</h3>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">Hours Invested</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Subsystems</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">PCB Designs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3U</span>
+                                <span class="stat-label">CubeSat Size</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Related Projects</h2>
+                <p>Explore other projects in my engineering portfolio</p>
+            </div>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="related-image">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="16" height="16" rx="2" stroke="white" stroke-width="2"/>
+                            <rect x="9" y="9" width="6" height="6" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="related-content">
+                        <h3 class="related-title">Tweaked Nebulaphone</h3>
+                        <span class="related-category">Electrical</span>
+                        <p>Custom synthesizer design based on BleepLab's Nebulaphone with enhanced features.</p>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <div class="related-image" style="background-color: var(--mechanical-pink);">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/>
+                            <path d="M12 8L12 12L16 14" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="related-content">
+                        <h3 class="related-title">Mechanics Course Notes</h3>
+                        <span class="related-category">Mechanical</span>
+                        <p>Comprehensive LaTeX-formatted mechanics lectures by Pavel Viktor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anna's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
