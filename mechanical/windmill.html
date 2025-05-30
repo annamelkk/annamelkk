@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windmill Toy Model</title>
+    <title>Windmill Toy model</title>
     <style>
         /* Global Styles */
         :root {
@@ -355,10 +355,10 @@
             display: inline-flex;
             align-items: center;
             color: var(--primary-color);
-            text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
+            margin-top: 15px;
+            text-decoration: none;
         }
         
         .project-link:last-child {
@@ -366,13 +366,14 @@
         }
         
         .project-link svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            transition: transform 0.3s;
         }
         
-        .project-link:hover {
-            color: var(--dark-blue);
+        .project-link:hover svg {
+            transform: translateX(3px);
         }
         
         .project-stats {
@@ -738,7 +739,8 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
