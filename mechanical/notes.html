@@ -286,14 +286,16 @@
         }
         
         .gallery-image {
-            background-color: #f8fafc;
             border-radius: 10px;
-            height: 200px;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--light-text);
             font-style: italic;
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 #7292d81b, 0 1.5px 8px 0 rgba(11, 17, 33, 0.10);
+            backdrop-filter: blur(1px);
         }
         
         .code-block {
@@ -633,7 +635,13 @@
                             and tagging features, and even contribute improvements or additions via GitHub.
 
                         </p>
-                        
+                            <div class="image-gallery">
+                            <div class="gallery-image" >
+                                <img src="../assets/mech-notes/graph-view.png" alt="" class="gallery-image">
+                            </div>
+                            <div class="gallery-image" style="max-height: fit-content;">
+                                <img src="../assets/mech-notes/index-page.png" alt="" class="gallery-image">
+                            </div>                    
 
                     </div>
 
