@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Name - Anna's Engineering Portfolio</title>
+    <title>Windmill Toy model</title>
     <style>
         /* Global Styles */
         :root {
@@ -63,7 +63,7 @@
         }
         
         .btn-primary {
-            background-color: var(--primary-color);
+            background-color: var(--aerospace-blue);
             color: white;
         }
         
@@ -83,12 +83,11 @@
             background-color: transparent;
             color: var(--text-color);
             border: 1px solid var(--text-color);
-            font-size: 0.9rem;
-            padding: 8px 20px;
+            padding: px 20px;
         }
         
         .btn-back:hover {
-            background-color: var(--text-color);
+            background-color: var(--aerospace-blue);
             color: white;
         }
         
@@ -111,7 +110,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--aerospace-blue);
             text-decoration: none;
         }
         
@@ -138,8 +137,8 @@
         /* Project Hero Section */
         .project-hero {
             padding: 100px 0 60px;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
-            color: white;
+            background: #ffb0be;
+            color: var(--aerospace-blue);
         }
         
         .breadcrumb {
@@ -149,7 +148,7 @@
         }
         
         .breadcrumb a {
-            color: white;
+            color: var(--aerospace-blue);
             text-decoration: none;
         }
         
@@ -174,7 +173,7 @@
         .project-category {
             display: inline-block;
             background-color: rgba(255, 255, 255, 0.2);
-            color: white;
+            color: var(--aerospace-blue);
             padding: 8px 20px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -206,7 +205,7 @@
         }
         
         .project-hero-image {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.183);
             border-radius: 15px;
             padding: 40px;
             text-align: center;
@@ -216,7 +215,7 @@
         .project-hero-icon {
             width: 120px;
             height: 120px;
-            color: white;
+            color: var(--aerospace-blue);
             margin-bottom: 20px;
         }
         
@@ -271,7 +270,7 @@
         }
         
         .features-list li::before {
-            content: "✓";
+            content: "•";
             position: absolute;
             left: 0;
             color: var(--primary-color);
@@ -287,14 +286,14 @@
         }
         
         .gallery-image {
-            background-color: #f8fafc;
             border-radius: 10px;
-            height: 200px;
+            box-shadow: 0 4px 24px 0 rgba(11, 17, 33, 0.18);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--light-text);
             font-style: italic;
+            overflow: hidden;
         }
         
         .code-block {
@@ -356,10 +355,10 @@
             display: inline-flex;
             align-items: center;
             color: var(--primary-color);
-            text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
+            margin-top: 15px;
+            text-decoration: none;
         }
         
         .project-link:last-child {
@@ -367,13 +366,14 @@
         }
         
         .project-link svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            transition: transform 0.3s;
         }
         
-        .project-link:hover {
-            color: var(--dark-blue);
+        .project-link:hover svg {
+            transform: translateX(3px);
         }
         
         .project-stats {
@@ -489,13 +489,12 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">Anna Melkonyan</a>
             <nav>
                 <ul>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -505,41 +504,43 @@
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Micro Satellite
+                <a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Click-Lock Rotation Holder
             </div>
             <div class="project-hero-content">
                 <div>
-                    <h1 class="project-title">Micro Satellite</h1>
-                    <span class="project-category">Aerospace Engineering</span>
+                    <h1 class="project-title">Click-Lock Rotation Holder</h1>
+                    <span class="project-category">Mechanical</span>
                     <p class="project-summary">
-                        Designing and prototyping a CubeSat platform with novel power management 
-                        systems and advanced communication capabilities for low Earth orbit missions.
+                        The Click-Lock Rotation Holder is a 3D smartphone stand model designed for secure
+                         portrait and landscape use with integrated support for wired charging.
                     </p>
                     <div class="project-meta">
                         <div class="meta-item">
                             <h4>Status</h4>
-                            <p>In Progress</p>
+                            <p>Finished</p>
                         </div>
                         <div class="meta-item">
                             <h4>Timeline</h4>
-                            <p>6 months</p>
-                        </div>
-                        <div class="meta-item">
-                            <h4>Team Size</h4>
-                            <p>4 members</p>
+                            <p>1 week</p>
                         </div>
                     </div>
                     <div style="display: flex; gap: 20px;">
                         <a href="#content" class="btn btn-primary">Read More</a>
-                        <a href="index.html" class="btn btn-back">← Back to Portfolio</a>
+                        <a href="index.html" class="btn btn-back">Back to Portfolio</a>
                     </div>
                 </div>
                 <div class="project-hero-image">
-                    <svg class="project-hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                        <svg class="project-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Phone body -->
+                            <rect x="20" y="10" width="24" height="44" rx="4" stroke="currentColor" stroke-width="3" fill="none"/>
+                            <!-- Screen -->
+                            <rect x="24" y="15" width="16" height="30" rx="2" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <!-- Holder arms (left and right) -->
+                            <rect x="14" y="22" width="6" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="44" y="22" width="6" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <!-- Stand base -->
+                            <rect x="26" y="54" width="12" height="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
                 </div>
             </div>
         </div>
@@ -554,52 +555,49 @@
                     <div class="content-section">
                         <h2>Project Overview</h2>
                         <p>
-                            The Micro Satellite project represents a comprehensive approach to small satellite design, 
-                            focusing on creating a cost-effective CubeSat platform that can serve multiple mission 
-                            profiles. Our design emphasizes modularity, reliability, and innovative power management 
-                            to extend mission duration and capability.
+                            The Click-Lock Rotation Holder was designed to provide users with a stable
+                            and adjustable platform for holding smartphones in both vertical and horizontal
+                            orientations.
                         </p>
                         <p>
-                            This project combines theoretical aerospace engineering principles with hands-on 
-                            prototyping and testing, providing valuable experience in systems integration, 
-                            orbital mechanics, and space-qualified component selection.
+                             The design emphasizes rotational flexibility, secure angle locking, and charging 
+                             accessibility, making it suitable for use during video calls, filming, or desktop use.
                         </p>
                     </div>
 
                     <!-- Technical Challenges -->
                     <div class="content-section">
-                        <h2>Technical Challenges</h2>
-                        <h3>Power Management System</h3>
+                        <h2>Requirements and Technical Challenges</h2>
+                        <h3>Dual Orientation Support</h3>
                         <p>
-                            Developing an efficient power management system for the harsh space environment 
-                            required careful consideration of solar panel placement, battery chemistry, and 
-                            power distribution architecture.
+                            The holder must allow the phone to rotate between portrait and
+                            landscape modes and securely lock at various angles.
+                        </p>
+
+                        
+                        <h3>Charging Clearance</h3>
+                        <p>
+                            The phone must remain fully usable and chargeable while docked 
+                            in either orientation.
                         </p>
                         
-                        <h3>Communication Subsystem</h3>
                         <p>
-                            Implementing reliable communication with ground stations while managing power 
-                            constraints and antenna deployment mechanisms in a compact form factor.
+                            Key challenges included designing a rotational mechanism that is strong
+                            yet simple to fabricate and ensuring that the holder geometry allowed for
+                            standard charging cables without interference.
                         </p>
-                        
-                        <h3>Thermal Management</h3>
-                        <p>
-                            Ensuring all components operate within temperature ranges despite extreme 
-                            thermal cycling in low Earth orbit.
-                        </p>
+
                     </div>
 
                     <!-- Key Features -->
                     <div class="content-section">
                         <h2>Key Features</h2>
                         <ul class="features-list">
-                            <li>3U CubeSat form factor with modular payload bay</li>
-                            <li>Advanced lithium-ion battery management system</li>
-                            <li>Deployable solar panel arrays with MPPT controllers</li>
-                            <li>S-band communication system with ground station compatibility</li>
-                            <li>Attitude determination and control system (ADCS)</li>
-                            <li>Onboard flight computer with redundant systems</li>
-                            <li>Custom PCB design for space-qualified components</li>
+                            <li>An interlocking radial gear interface allows the holder to snap and lock into discrete rotational angles.</li>
+                            <li>Easily switch between vertical and horizontal setups.</li>
+                            <li>A tripod-style lower structure ensures stability on flat surfaces.</li>
+                            <li>Side clamps ensure the phone stays in place during rotation or adjustment.</li>
+
                         </ul>
                     </div>
 
@@ -608,69 +606,46 @@
                         <h2>Development Process</h2>
                         <h3>Phase 1: Requirements Analysis</h3>
                         <p>
-                            Conducted thorough mission requirements analysis, including orbit selection, 
-                            payload requirements, and regulatory compliance for space missions.
+                            Analyzed existing products to identify gaps in functionality and design.
+                            Established key requirements: dual orientation, charging compatibility, and stability.
                         </p>
                         
-                        <h3>Phase 2: System Design</h3>
+                        <h3>Phase 2: Initial modeling</h3>
                         <p>
-                            Created detailed system architecture diagrams, component specifications, 
-                            and interface control documents for all subsystems.
+                            Focused on defining the clamp dimensions to fit a generic smartphone, creating a secure holding mechanism.
+                            Developed the radial gear interface to allow for easy rotation and locking.
                         </p>
-                        
-                        <h3>Phase 3: Prototyping & Testing</h3>
-                        <p>
-                            Built and tested individual subsystems, followed by integration testing 
-                            and environmental qualification procedures.
-                        </p>
-                    </div>
 
-                    <!-- Code Example -->
-                    <div class="content-section">
-                        <h2>Flight Software Example</h2>
-                        <p>Sample code from our attitude control system:</p>
-                        <div class="code-block">
-                            <pre>
-// Attitude Control System - Main Loop
-void attitude_control_loop() {
-    // Read sensor data
-    Vector3 gyro_data = read_gyroscope();
-    Vector3 mag_data = read_magnetometer();
-    
-    // Estimate current attitude
-    Quaternion current_attitude = estimate_attitude(gyro_data, mag_data);
-    
-    // Calculate control commands
-    Vector3 control_torque = calculate_control_torque(
-        current_attitude, 
-        target_attitude
-    );
-    
-    // Apply control to reaction wheels
-    apply_wheel_torque(control_torque);
-}
-                            </pre>
+                        <div class="image-gallery">
+                            <div class="gallery-image">
+                                <img src="../assets/phone-holder/holder1.png" alt="" class="gallery-image" style="width: 100%; height: auto;">
+                            </div>
+                            <div class="gallery-image">
+                                <img src="../assets/phone-holder/phone-holder.png" alt="" class="gallery-image" style="width: 100%; height: auto;">
+                            </div>
                         </div>
                     </div>
 
+
+
                     <!-- Results -->
                     <div class="content-section">
-                        <h2>Current Progress & Results</h2>
+                        <h2>Final Assembly and Results</h2>
                         <p>
-                            The project has successfully completed the preliminary design review and 
-                            is currently in the detailed design and prototyping phase. Key accomplishments 
-                            include successful testing of the power management system and initial 
-                            communication link establishment.
+                            The final design consists of a base stand, a vertical support, a rotating joint with gear
+                            teeth for locking, and a phone holder frame with sufficient clearance for wired charging. 
+                            The resulting assembly is robust, versatile, and ready for 3D printing, offering practical
+                            usability for a variety of daily phone usage scenarios.
                         </p>
                         <div class="image-gallery">
                             <div class="gallery-image">
-                                Prototype Assembly
+                                <img src="../assets/phone-holder/full.png" alt="" class="gallery-image" style="width: 100%; height: auto;">
                             </div>
                             <div class="gallery-image">
-                                PCB Design Render
+                                <img src="../assets/phone-holder/back.png" alt="" class="gallery-image" style="width: 100%; height: auto;">
                             </div>
                             <div class="gallery-image">
-                                Testing Setup
+                                <img src="../assets/phone-holder/hold-mechanism.png" alt="" class="gallery-image" style="height: max-content;">
                             </div>
                         </div>
                     </div>
@@ -682,14 +657,7 @@ void attitude_control_loop() {
                     <div class="sidebar-card">
                         <h3>Technologies Used</h3>
                         <div class="tech-tags">
-                            <span class="tech-tag">C/C++</span>
-                            <span class="tech-tag">MATLAB</span>
                             <span class="tech-tag">SolidWorks</span>
-                            <span class="tech-tag">KiCad</span>
-                            <span class="tech-tag">FreeRTOS</span>
-                            <span class="tech-tag">STM32</span>
-                            <span class="tech-tag">RF Design</span>
-                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
 
@@ -697,27 +665,11 @@ void attitude_control_loop() {
                     <div class="sidebar-card">
                         <h3>Project Resources</h3>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/annamelkk/mechanics-notes" class="project-link">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9 19C4.58172 19 1 15.4183 1 11C1 6.58172 4.58172 3 9 3C13.4183 3 17 6.58172 17 11C17 12.5 16.5 14 15.5 15L21 20.5L18.5 23L13 17.5C12 18.5 10.5 19 9 19Z" stroke="currentColor" stroke-width="2"/>
                                 </svg>
                                 GitHub Repository
-                            </a>
-                            <a href="#" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Technical Documentation
-                            </a>
-                            <a href="#" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M8 14S9.5 16 12 16S16 14 16 14" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="9" y1="9" x2="9.01" y2="9" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="15" y1="9" x2="15.01" y2="9" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Live Demo
                             </a>
                         </div>
                     </div>
@@ -727,20 +679,16 @@ void attitude_control_loop() {
                         <h3>Project Statistics</h3>
                         <div class="project-stats">
                             <div class="stat-item">
-                                <span class="stat-number">150+</span>
+                                <span class="stat-number">5+</span>
                                 <span class="stat-label">Hours Invested</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">5</span>
+                                <span class="stat-number">2</span>
                                 <span class="stat-label">Subsystems</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">12</span>
-                                <span class="stat-label">PCB Designs</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3U</span>
-                                <span class="stat-label">CubeSat Size</span>
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Componentss</span>
                             </div>
                         </div>
                     </div>
@@ -768,20 +716,34 @@ void attitude_control_loop() {
                         <h3 class="related-title">Tweaked Nebulaphone</h3>
                         <span class="related-category">Electrical</span>
                         <p>Custom synthesizer design based on BleepLab's Nebulaphone with enhanced features.</p>
+                            <a href="../project_in_progress.html" class="project-link">
+                            View Details
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></a>
                     </div>
                 </div>
 
                 <div class="related-card">
                     <div class="related-image" style="background-color: var(--mechanical-pink);">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/>
-                            <path d="M12 8L12 12L16 14" stroke="white" stroke-width="2"/>
-                        </svg>
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     </div>
                     <div class="related-content">
-                        <h3 class="related-title">Mechanics Course Notes</h3>
+                        <h3 class="related-title">Mechanics Lecture Notes</h3>
                         <span class="related-category">Mechanical</span>
                         <p>Comprehensive LaTeX-formatted mechanics lectures by Pavel Viktor.</p>
+                            <a href="../mechanical/notes.html" class="project-link">
+                            View Details
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
