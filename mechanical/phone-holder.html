@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windmill Toy model</title>
+    <title>Phone Holder</title>
     <style>
         /* Global Styles */
         :root {
@@ -101,17 +101,45 @@
             z-index: 100;
         }
         
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            margin-right: 40px;
+            transition: opacity 0.2s;
+        }
+        .site-logo img {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background: #e6edfa;
+            box-shadow: 0 2px 8px rgba(114,147,216,0.10);
+            transition: transform 0.2s;
+        }
+        .site-logo:hover img {
+            transform: scale(1.08) rotate(-8deg);
+            box-shadow: 0 4px 16px rgba(114,147,216,0.18);
+        }
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            font-family: 'Lato', sans-serif;
+            transition: color 0.2s;
+        }
+        .site-logo:hover .site-title {
+            color: #3b82f6;
+        }
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--aerospace-blue);
-            text-decoration: none;
+            min-height: 64px;
+            gap: 32px;
+            padding: 0 8px;
         }
         
         nav ul {
@@ -489,12 +517,15 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
+            <a href="/" class="site-logo" style="display: flex; align-items: center; margin-right: 30px;">
+                <img src="../assets/logo/neutron-1.svg" alt="Logo" style="height:48px; width:auto; display:block;">
+            </a>
             <nav>
                 <ul>
-                    <li><a href="../index.html#about">About</a></li>
-                    <li><a href="../index.html#projects">Projects</a></li>
-                    <li><a href="../index.html#skills">Skills</a></li>
-                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>

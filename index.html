@@ -106,17 +106,65 @@
             padding: 20px 0;
             background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 100;
+            transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
+            transform: translateY(-100%);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        header.header-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        header.header-hide {
+            transform: translateY(-100%);
+            opacity: 0;
         }
         
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            margin-right: 40px;
+            transition: opacity 0.2s;
+        }
+        .site-logo img {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background: #e6edfa;
+            box-shadow: 0 2px 8px rgba(114,147,216,0.10);
+            transition: transform 0.2s;
+        }
+        .site-logo:hover img {
+            transform: scale(1.08) rotate(-8deg);
+            box-shadow: 0 4px 16px rgba(114,147,216,0.18);
+        }
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            font-family: 'Lato', sans-serif;
+            transition: color 0.2s;
+        }
+        .site-logo:hover .site-title {
+            color: #3b82f6;
+        }
+
         .header-container {
             display: flex;
-            justify-content: baseline;
-            align-content: center;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 64px;
+            gap: 32px;
+            padding: 0 8px;
         }
-        
         
         nav ul {
             display: flex;
@@ -140,9 +188,11 @@
         
         /* Hero Section */
         .hero {
-            padding: 80px 0;
+            padding: 140px 0 120px 0; /* Increased height */
             background-color: var(--dark-blue);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
         
         .hero-content {
@@ -590,12 +640,49 @@
             text-align: center;
         }
     </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            let lastScroll = window.scrollY;
+            let ticking = false;
+            let isVisible = false;
+
+            function updateHeader() {
+                const currentScroll = window.scrollY;
+                if (currentScroll < 40) {
+                    header.classList.remove('header-visible', 'header-hide');
+                    isVisible = false;
+                } else if (currentScroll > lastScroll + 2) {
+                    // Scrolling down
+                    header.classList.add('header-visible');
+                    header.classList.remove('header-hide');
+                    isVisible = true;
+                } else if (currentScroll < lastScroll - 2) {
+                    // Scrolling up
+                    header.classList.remove('header-visible');
+                    header.classList.add('header-hide');
+                    isVisible = false;
+                }
+                lastScroll = currentScroll;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateHeader);
+                    ticking = true;
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-
+            <a href="/" class="site-logo" style="display: flex; align-items: center; margin-right: 30px;">
+                <img src="../assets/logo/neutron-1.svg" alt="Logo" style="height:48px; width:auto; display:block;">
+            </a>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
