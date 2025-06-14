@@ -1,1123 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Melkonyan - Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/index.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna's Engineering Portfolio</title>
-    <style>
-        /* Global Styles */
-
-
-
-        :root {
-            --primary-color: #7293d8;
-            --dark-blue: #0b1121;
-            --light-blue: #dbeafe;
-            --aerospace-blue: #0b1121;
-            --electrical-purple: #7293d8;
-            --mechanical-pink: #ff8599;
-            --text-color: #1e293b;
-            --light-text: #64748b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Lato';
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        h1, h2, h3 {
-            margin-bottom: 16px;
-        }
-        
-        p {
-            margin-bottom: 16px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        
-        .section-header p {
-            color: var(--light-text);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Header Styles */
-        header {
-            padding: 20px 0;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
-            transform: translateY(-100%);
-            opacity: 0;
-            will-change: transform, opacity;
-        }
-        header.header-visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        header.header-hide {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        
-        .site-logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            margin-right: 40px;
-            transition: opacity 0.2s;
-        }
-        .site-logo img {
-            height: 48px;
-            width: 48px;
-            border-radius: 50%;
-            background: #e6edfa;
-            box-shadow: 0 2px 8px rgba(114,147,216,0.10);
-            transition: transform 0.2s;
-        }
-        .site-logo:hover img {
-            transform: scale(1.08) rotate(-8deg);
-            box-shadow: 0 4px 16px rgba(114,147,216,0.18);
-        }
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-            font-family: 'Lato', sans-serif;
-            transition: color 0.2s;
-        }
-        .site-logo:hover .site-title {
-            color: #3b82f6;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 64px;
-            gap: 32px;
-            padding: 0 8px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 140px 0 120px 0; /* Increased height */
-            background-color: var(--dark-blue);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero-disciplines {
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-        }
-        
-        .hero-disciplines span:not(:last-child)::after {
-            content: " | ";
-            margin: 0 5px;
-            color: var(--primary-color);
-        }
-        
-        .hero-description {
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .hero-image {
-            position: absolute;
-            right: 20%;
-            top: 15%;
-            max-width: 320px;
-            width: 30vw;
-            min-width: 180px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        @media (max-width: 700px) {
-            .hero-image {
-                position: static;
-                margin: 0 auto 30px auto;
-                display: flex;
-                justify-content: center;
-                width: 500px;
-                max-width: 500px;
-            }
-        }
-        
-        /* About Section */
-        .about {
-            background-color: #f8fafc;
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        
-        .about-image {
-            width: 100%;
-            max-width: 320px; /* or any value that fits your layout */
-            aspect-ratio: 3/4; /* optional, for portrait images */
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            object-fit: cover;
-        }
-        
-        .about-content {
-            flex: 1;
-        }
-        
-        .about-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
-        }
-        
-        .tag {
-            background-color: var(--light-blue);
-            color: var(--text-color);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Projects Section */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .project-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-image {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .project-card:nth-child(1) .project-image {
-            background-color: var(--aerospace-blue);
-        }
-        
-        .project-card:nth-child(2) .project-image {
-            background-color: var(--electrical-purple);
-        }
-        
-        .project-card:nth-child(3) .project-image {
-            background-color: var(--mechanical-pink);
-        }
-        
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            color: white;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-        }
-        
-        .project-category {
-            display: inline-block;
-            background-color: var(--light-blue);
-            color: var(--primary-color);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-        
-        .project-tag {
-            font-size: 0.8rem;
-            padding: 3px 10px;
-            border-radius: 4px;
-            background-color: #f1f5f9;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 15px;
-            text-decoration: none;
-        }
-        
-        .project-link svg {
-            width: 16px;
-            height: 16px;
-            margin-left: 5px;
-            transition: transform 0.3s;
-        }
-        
-        .project-link:hover svg {
-            transform: translateX(3px);
-        }
-        
-        /* Skills Section */
-        .skills {
-            background-color: #f8fafc;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-        }
-        
-        .technical-skills {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .skill-card:nth-child(1) {
-            flex: 1;
-            padding: 30px;
-            border-radius: 10px;
-            background-color: #baceff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-            .skill-card:nth-child(2) {
-            flex: 1;
-            padding: 30px;
-            border-radius: 10px;
-            background-color: #dfe9ff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-            .skill-card:nth-child(3) {
-            flex: 1;
-            padding: 30px;
-            border-radius: 10px;
-            background-color: #ffe7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-card h3 {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            color: var(--text-color);
-            font-size: 1.5rem;
-        }
-        
-        .skill-card svg {
-            margin-right: 10px;
-        }
-        
-        .skill-card:nth-child(1) h3 {
-            color: var(--aerospace-blue);
-        }
-        
-        .skill-card:nth-child(2) h3 {
-            color: var(--electrical-purple);
-        }
-        
-        .skill-card:nth-child(3) h3 {
-            color: var(--mechanical-pink);
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .skill-list li::before {
-            content: "•";
-            color: var(--);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-
-        .software-skills {
-            margin-top: 40px;
-        }
-        
-        .software-skills h3 {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .software-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        
-        .software-item {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .software-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-        }
-        
-        .skill-meter {
-            height: 10px;
-            background-color: #e2e8f0;
-            border-radius: 6px;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 6px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: #f8fafc;
-        }
-        
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            justify-content: center;
-        }
-        
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-details {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-details h3 {
-            margin-bottom: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            color: var(--primary-color);
-            margin-right: 15px;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            transition: background-color 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: #0b1121;
-        }
-        
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .job-seeking {
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 10px;
-            padding: 30px;
-        }
-        
-        .job-seeking h3 {
-            margin-bottom: 15px;
-        }
-        
-        .resume-link {
-            display: inline-flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            margin-top: 15px;
-            margin-right: 20px;
-            font-weight: 500;
-        }
-        
-        .resume-link svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-        
-        .form-note {
-            font-size: 0.8rem;
-            color: var(--light-text);
-            margin-top: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-    </style>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            const header = document.querySelector('header');
-            let lastScroll = window.scrollY;
-            let ticking = false;
-            let isVisible = false;
-
-            function updateHeader() {
-                const currentScroll = window.scrollY;
-                if (currentScroll < 40) {
-                    header.classList.remove('header-visible', 'header-hide');
-                    isVisible = false;
-                } else if (currentScroll > lastScroll + 2) {
-                    // Scrolling down
-                    header.classList.add('header-visible');
-                    header.classList.remove('header-hide');
-                    isVisible = true;
-                } else if (currentScroll < lastScroll - 2) {
-                    // Scrolling up
-                    header.classList.remove('header-visible');
-                    header.classList.add('header-hide');
-                    isVisible = false;
-                }
-                lastScroll = currentScroll;
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', function () {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateHeader);
-                    ticking = true;
-                }
-            });
-        });
-    </script>
+    
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Space Background Animation -->
+    <div class="space-background" id="spaceBackground"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Anna Melkonyan</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Anna Melkonyan</h1>
-                <div class="hero-disciplines">
-                    <span>Aerospace</span>
-                    <span>Electrical</span>
-                    <span>Mechanical</span>
-
-                    
+                <div class="hero-text">
+                    <h1>Anna Melkonyan</h1>
+                    <p class="subtitle">Electrical & Aerospace Engineer</p>
+                    <p class="location"> Yerevan, Armenia</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="cta-button">
+                            My Work
+                        </a>
+                        <a href="assets/CV.pdf" class="cv-button" target="_blank" >
+                            Download my CV
+                        </a>
+                    </div>
                 </div>
-                <p class="hero-description">
-                    Passionate engineering student creating solutions at 
-                    the intersection of multiple engineering disciplines.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-        
+               
             </div>
-
         </div>
-
-        <div class="hero-image">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 800 800" fill="none">
-                     <style>
-                                .eye-float {
-                                animation: float 4s ease-in-out infinite;
-                                }
-                                @keyframes float {
-                                0%, 100% {
-                                    transform: translateY(0px);
-                                }
-                                50% {
-                                    transform: translateY(-40px);
-                                }
-                                }
-                                .outer-circle {
-                                stroke: #3b82f6;
-                                stroke-width: 2;
-                                stroke-dasharray: 20 20;
-                                }
-                                .inner-circle {
-                                stroke: #60a5fa;
-                                stroke-width: 2;
-                                }
-                                .cross-line {
-                                stroke: #60a5fa;
-                                stroke-width: 2;
-                                }
-                                .eye-shape {
-                                fill: var(--primary-color);
-                                stroke: #60a5fa;
-                                stroke-width: 2;
-                                }
-                                .pupil {
-                                fill: white;
-                                }
-                         </style>
-
-                        <g class="eye-float">
-                            <circle cx="400" cy="400" r="300" class="outer-circle"/>
-                            <circle cx="400" cy="400" r="200" class="inner-circle"/>
-                            <path d="M100 400 L700 400" class="cross-line"/>
-                            <path d="M200 200 L600 600" class="cross-line"/>
-                            <path d="M200 600 L600 200" class="cross-line"/>
-                            <path d="M400 100 L400 700" class="cross-line"/>
-                            <path d="M250 400 Q400 250 550 400 Q400 550 250 400 Z" class="eye-shape"/>
-                            <circle cx="400" cy="400" r="20" class="pupil"/>
-                        </g>
-                        </svg>
-
-
-                </div>
-
     </section>
+
+
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Bridging multiple engineering disciplines to solve complex challenges</p>
             </div>
-            <div class="about-container">
-                <div class="about-image">
-                    <img height="500px" src="assets/my_image.jpg" alt="">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am currently a student with a focus on aerospace, electrical, and mechanical engineering. My interdisciplinary approach allows me to tackle complex problems with solutions that span multiple engineering domains.</p>
+                    <p>Beyond my technical skills, I am also an avid hobbyist. I love drawing and design, language learning, and travelling!</p>
                 </div>
-                <div class="about-content">
-                    <h3 class="about-title">Engineering Enthusiast</h3>
-                    <p>
-                        I am a passionate engineering student with a focus on 
-                        aerospace, electrical, and mechanical engineering. My 
-                        interdisciplinary approach allows me to tackle complex 
-                        problems with solutions that span multiple 
-                        engineering domains.
-                    </p>
-                    <p>
-                        With a strong foundation in theoretical principles and 
-                        hands-on experience, I want to create projects that push 
-                        the boundaries of what's possible in engineering. I'm 
-                        particularly interested in robotics, and advanced propulsion systems.
-                    </p>
-                    <p>
-                        On top of my technical skills, I am also an avid hobbyist. I love drawing 
-                        and design, language learning and travelling!
-                    </p>
-
-                    <div class="about-tags">
-                        <span class="tag">Problem Solver</span>
-                        <span class="tag">"Perfectionist"</span>
-                        <span class="tag">Team Player</span>
-                        <span class="tag">Detail-Oriented</span>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Explore my engineering projects spanning aerospace, electrical, and mechanical domains.</p>
-            </div>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="scale: 150%;">
-                            <!-- Main body -->
-                            <rect x="15" y="23" width="18" height="6" rx="2.2" stroke="currentColor" stroke-width="2.7"/>
-                            <!-- Wheels  -->
-                            <circle cx="18" cy="36" r="2.7" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="24" cy="36" r="2.7" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="30" cy="36" r="2.7" stroke="currentColor" stroke-width="1.5"/>
-                            <!-- Suspension arms  -->
-                            <line x1="18" y1="29" x2="18" y2="34" stroke="currentColor" stroke-width="1.7"/>
-                            <line x1="24" y1="29" x2="24" y2="34" stroke="currentColor" stroke-width="1.7"/>
-                            <line x1="30" y1="29" x2="30" y2="34" stroke="currentColor" stroke-width="1.7"/>
-                            <!-- Mast (vertical) -->
-                            <line x1="27" y1="23" x2="27" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                            <!-- Camera (horizontal bar + circle) -->
-                            <line x1="24.8" y1="16" x2="29.2" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <circle cx="31" cy="16" r="1.1" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Serendipity rover (in progress)</h3>
-                        <span class="project-category">Aerospace</span>
-                        <p>
-                            Designed and prototyped a small rover for planetary exploration.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Chassis design</span>
-                            <span class="project-tag">Power Systems</span>
-                            <span class="project-tag">RF Communication</span>
-                        </div>
-                         <a href="project_in_progress.html" class="project-link">
-                            View Details
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect x="9" y="9" width="6" height="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="9" y1="1" x2="9" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="15" y1="1" x2="15" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="9" y1="20" x2="9" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="15" y1="20" x2="15" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="20" y1="9" x2="23" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="20" y1="14" x2="23" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="1" y1="9" x2="4" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="1" y1="14" x2="4" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Tweaked Nebulaphone (in progress)</h3>
-                        <span class="project-category">Electrical</span>
-                        <p>
-                            Using BleepLab's Nebulaphone design as a base for my own synth
-                            design.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Microcontrollers</span>
-                            <span class="project-tag">IoT</span>
-                        </div>
-                        <a href="project_in_progress.html" class="project-link">
-                            View Details
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg class="project-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/>
-                        </svg>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Windmill Toy</h3>
-                        <span class="project-category">Mechanical</span>
-                        <p>
-                            A Windmill toy prototype that uses energy from wind to operate a DC motor.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">SolidWorks</span>
-                            <span class="project-tag">Mechanics
-                        </div>
-                        <a href="mechanical/windmill.html" class="project-link">
-                            View Details
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-             
-            
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="projects.html" class="btn btn-outline">All Projects</a>
-            </div>
-            
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+        <!-- Skills Section -->
+    <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
-                <h2>Technical Skills</h2>
-                <p>My interdisciplinary skillset across aerospace, electrical, and mechanical engineering.</p>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">My expertise across multiple engineering disciplines</p>
             </div>
             <div class="skills-container">
-                <div class="technical-skills">
-                    <!-- Aerospace Skills -->
-                    <div class="skill-card">
-                        <h3>
+                <div class="skill-category" style="border-color: var(--aero-blue);">
+                    <h3 style="color: var(--aero-blue);"><span class="skill-icon">                            
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Aerospace (in progress)
-                        </h3>
-                        <ul class="skill-list">
-                            <li>Aerodynamics</li>
-                            <li>Propulsion Systems</li>
-                            <li>Orbital Mechanics</li>
-                            <li>Spacecraft Design</li>
-                        </ul>
+                        </span>
+                            Aerospace Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Flight Dynamics & Control Systems</li>
+                        <li>Propulsion Systems Design</li>
+                        <li>Aerodynamics</li>
+                    </ul>
+
+                    <div class="skill-progress skill-progress-grid">
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/matlab_logo.svg" alt=""></span>
+                            </div>
+                            <span>Matlab<span>
+                        </div>
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/ansys_logo.svg" alt=""></span>
+                            </div>
+                            <span>Ansys</span>
+                        </div>
                     </div>
-                    
-                    <!-- Electrical Skills -->
-                    <div class="skill-card">
-                        <h3>
+                </div>
+                
+                <div class="skill-category" style="border-color: var(--elec-lightblue);">
+                    <h3 style="color: var(--elec-lightblue);"><span class="skill-icon">                            
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Electrical
-                        </h3>
-                        <ul class="skill-list">
-                            <li>Circuit Design & Analysis</li>
-                            <li>Microcontroller Programming</li>
-                            <li>PCB Design</li>
-                        </ul>
+                        </span>Electrical Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Circuit Design & Analysis</li>
+                        <li>Embedded Systems Programming</li>
+                        <li>PCB Design</li>
+                    </ul>
+                    <div class="skill-progress skill-progress-grid">
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/arduino_logo.svg" alt=""></span>
+                            </div>
+                            <span>Arduino/C++</span>
+                        </div>
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/kicad_logo.svg" alt=""></span>
+                            </div>
+                            <span>KiCad</span>
+                        </div>
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/ltspice_logo.svg" alt=""></span>
+                            </div>
+                            <span>LTSpice</span>
+                        </div>
                     </div>
-                    
-                    <!-- Mechanical Skills -->
-                    <div class="skill-card">
-                        <h3>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                </div>
+                
+                <div class="skill-category" style="border-color: var(--mech-pink);">
+                    <h3 style="color: var(--mech-pink);"><span class="skill-icon">                           
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
                                 <path d="M12 8L12 12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 <path d="M7 6L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 <path d="M17 6L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 <path d="M7 19L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 <path d="M17 19L17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            Mechanical
-                        </h3>
-                        <ul class="skill-list">
-                            <li>CAD (SolidWorks, AutoCAD, 3ds Max)</li>
-                            <li>3D Printing & Prototyping</li>
-                            <li>Structural Analysis</li>
-                            <li>Dynamics</li>
-                        </ul>
+                            </svg></span>Mechanical Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Mechanical Design & CAD</li>
+                        <li>Robotics & Automation</li>
+                        <li>Structural Analysis</li>
+                    </ul>
+                        <div class="skill-progress skill-progress-grid">
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/autocad_logo.svg" alt=""></span>
+                            </div>
+                            <span>AutoCAD<span>
+                        </div>
+                        <div class="progress-item">
+                            <div class="icon-square">
+                                <span><img src="assets/icons/solidworks_logo.svg" alt=""></span>
+                            </div>
+                            <span>SolidWorks</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="software-skills">
-                    <h3>Software Proficiency</h3>
-                    <div class="software-grid">
-                        <div class="software-item">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="software-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-                            </svg>         
-                            <div>MATLAB</div>
-                            <div class="skill-meter">
-                                <div class="skill-progress" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="software-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="software-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                            <div>Python</div>
-                            <div class="skill-meter">
-                                <div class="skill-progress" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="software-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="software-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                            </svg>
-                            <div>SolidWorks</div>
-                            <div class="skill-meter">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="software-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="software-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            <div>Arduino/C</div>
-                            <div class="skill-meter">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Interested in collaborating or learning more about my projects? Feel free to reach out!</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Explore my engineering projects spanning multiple domains</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-details">
-                        <h3>Contact Information</h3>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <path d="M22 7L13.03 12.7C12.7213 12.8934 12.3679 13 12.005 13C11.6421 13 11.2887 12.8934 10.98 12.7L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <div>melqonanyanna@gmail.com</div>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 10C20 14.4183 16.4183 18 12 18C7.58172 18 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M12 22H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M12 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <div>American University of Armenia. Yerevan</div>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/anna-melkonyan-252370243/" class="social-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="ugh_redesign.html" class="social-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 19C4.58172 19 1 15.4183 1 11C1 6.58172 4.58172 3 9 3C13.4183 3 17 6.58172 17 11C17 12.5 16.5 14 15.5 15L21 20.5L18.5 23L13 17.5C12 18.5 10.5 19 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45419 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="16.5" cy="7.5" r="1.5" fill="currentColor"/>
-                                </svg>
-                            </a>
-                        </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-icon"></span>
+                    <h3>Planetary Exploration Rover</h3>
+                    <p>Designed and prototyped a small rover for planetary exploration, incorporating advanced navigation systems and environmental sensors.</p>
+                    <div class="project-tags">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Aerospace</span>
+                        <span class="tag">Embedded Systems</span>
                     </div>
-                    
-                    <div class="job-seeking">
-                        <h3>Looking for Engineering Opportunities</h3>
-                        <p>Currently seeking internships and research opportunities in aerospace, electrical, or mechanical engineering fields.</p>
-                        <a href="assets/CV.pdf" class="resume-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 17V19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21H18C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M7 11L12 16L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 4V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            My resume
-                        </a>
+                    <a href="project_in_progress.html" class="project-link">Learn More →</a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"></span>
+                    <h3>Nebulaphone Synthesizer</h3>
+                    <p>Using BleepLab's Nebulaphone design as a base for my own custom synthesizer design, exploring the intersection of electronics and music.</p>
+                    <div class="project-tags">
+                        <span class="tag">Electronics</span>
+                        <span class="tag">Audio Engineering</span>
+                        <span class="tag">Circuit Design</span>
+                    </div>
+                    <a href="project_in_progress.html" class="project-link">Learn More →</a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"></span>
+                    <h3>Wind-Powered Motor System</h3>
+                    <p>A windmill toy prototype that efficiently converts wind energy to operate a DC motor, demonstrating renewable energy principles.</p>
+                    <div class="project-tags">
+                        <span class="tag">Mechanical</span>
+                        <span class="tag">Renewable Energy</span>
+                        <span class="tag">Prototyping</span>
+                    </div>
+                    <a href="mechanical/windmill.html" class="project-link">Learn More →</a>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                <a href="projects.html" class="cta-button" target="_blank">
+                    All projects
+                </a>
+            </div>
 
-                    </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Interested in collaborating or learning more about my projects?</p>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">Currently seeking internships and research opportunities in aerospace, electrical, or mechanical engineering fields.</p>
+                <div class="contact-links">
+                    <a href="mailto:melqonanyanna@gmail.com" class="contact-button" target="_blank">Email Me</a>
+                    <a href="https://www.linkedin.com/in/anna-melkonyan-252370243/" class="contact-button" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/annamelkk" class="contact-button" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1126,8 +255,124 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Anna's Portfolio. All rights reserved.</p>
+            <p>&copy; 2025 Anna Melkonyan. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Create space background animation
+        function createSpaceBackground() {
+            const spaceBackground = document.getElementById('spaceBackground');
+            
+            // Create stars
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = `star ${['small', 'medium', 'large'][Math.floor(Math.random() * 3)]}`;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                spaceBackground.appendChild(star);
+            }
+            
+            // Create meteorites
+            for (let i = 0; i < 5; i++) {
+                const meteorite = document.createElement('div');
+                meteorite.className = 'meteorite';
+                meteorite.style.top = Math.random() * 50 + '%';
+                meteorite.style.left = '-50px';
+                meteorite.style.animationName = 'meteorMove';
+                meteorite.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                meteorite.style.animationDelay = Math.random() * 10 + 's';
+                meteorite.style.animationIterationCount = 'infinite';
+                spaceBackground.appendChild(meteorite);
+            }
+            
+            // Create constellation lines
+            for (let i = 0; i < 8; i++) {
+                const line = document.createElement('div');
+                line.className = 'constellation-line';
+                line.style.top = Math.random() * 100 + '%';
+                line.style.left = Math.random() * 100 + '%';
+                line.style.animationDelay = Math.random() * 8 + 's';
+                line.style.transform = `rotate(${Math.random() * 360}deg)`;
+                spaceBackground.appendChild(line);
+            }
+        }
+
+        // Initialize space background
+        createSpaceBackground();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll-based navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = 'var(--text-secondary)';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--text-primary)';
+                }
+            });
+        });
+
+        // Parallax effect for space elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelectorAll('.star');
+            const meteorites = document.querySelectorAll('.meteorite');
+            
+            stars.forEach((star, index) => {
+                const speed = 0.1 + (index % 3) * 0.05;
+                star.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project cards and skill categories for entrance animations
+        document.querySelectorAll('.project-card, .skill-category').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>

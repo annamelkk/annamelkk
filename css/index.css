@@ -6,7 +6,7 @@
 
         :root {
             --mech-pink: #ff8599;        /* Soft pink for Mechanical */
-            --aero-blue: #002792;        /* Navy blue for Aerospace */
+            --aero-blue: #3f7cff;        /* Navy blue for Aerospace */
             --elec-lightblue: #7293d8;   /* Light blue for Electrical */
 
             --bg-color: #0a0a0a;
@@ -191,7 +191,8 @@
 
         .hero-text .subtitle {
             font-size: 1.3rem;
-            color: var(--text-secondary);
+            color: var(--elec-lightblue);
+            font-weight: 700;
             margin-bottom: 1rem;
             max-width: 600px;
             margin-left: auto;
@@ -200,7 +201,8 @@
 
         .hero-text .location {
             font-size: 1rem;
-            color: var(--accent);
+            font-weight: 700;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
             font-weight: 500;
         }
@@ -213,12 +215,12 @@
         }
 
         .cta-button {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 2px 8px rgba(152, 152, 152, 0.06);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             background: var(--accent);
-            color: white;
+            color: var(--bg-color);
             padding: 0.8rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
@@ -230,7 +232,9 @@
 
         .cta-button:hover {
             background: var(--accent-hover);
-            transform: translateY(-1px);
+            border: 1px solid var(--accent);
+            color: var(--text-primary);
+
         }
 
         .cv-button {
@@ -249,8 +253,7 @@
 
         .cv-button:hover {
             background: var(--accent);
-            color: white;
-            transform: translateY(-1px);
+            color: var(--bg-color);
         }
 
         .hero-visual {
@@ -373,7 +376,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--text-primary);
             font-weight: bold;
         }
 
@@ -394,20 +397,53 @@
             margin-bottom: 0.8rem;
         }
 
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: var(--border);
-            border-radius: 5px;
-            overflow: hidden;
-            margin-left: 1rem;
+
+        .skill-progress.skill-progress-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 18px 24px;
+                        margin-top: 18px;
+        } 
+        
+        .skill-progress.skill-progress-grid .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+
+        .contact-button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
         }
 
-        .progress-fill {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 2px;
-            transition: width 0.8s ease;
+        .icon-square {
+            width: 56px;
+            height: 56px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 8px rgba(152, 152, 152, 0.06);
+        }
+
+        
+        .icon-square img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+        
+        .skill-progress.skill-progress-grid .progress-item span:last-child {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary, #222);
+            margin-top: 2px;
         }
 
         .section-header {
