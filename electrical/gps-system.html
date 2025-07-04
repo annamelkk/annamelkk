@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/ind_proj.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Navigation System</title>
+    <title>GPS System</title>
 </head>
 <body>
     <!-- Space Background -->
@@ -27,16 +27,15 @@
     </nav>
 
     <!-- Project Hero Section -->
-  <section class="project-hero">
-      <div class="container">
-          <div class="hero-content">
-              <div>
-                  <h1 class="project-title">GPS Navigation System</h1>
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                 
+                    <h1 class="project-title">GPS Navigation System</h1>
                     <span class="project-category">Electrical</span>
                     <p class="project-summary">
-                        Designing and prototyping a toy windmill that uses energy from wind to operate a motor. The 
-                        motor can then be attached to additional parts for full demonstration of conversion of mechanical 
-                        energy to electrical.
+                        A simple GPS navigation system consisting of Arduino Uno, MPU9250 sensor used as magnetometer, OLED display.  
                     </p>
                     <div class="project-meta">
                         <div class="meta-item">
@@ -72,15 +71,13 @@
                     <div>
                         <h2>Project Overview</h2>
                         <p>
-                            This project involves the design and prototyping of a toy windmill that 
-                            utilizes wind energy to operate a small DC motor, demonstrating the conversion 
-                            of mechanical energy into electrical energy.
+                           This project centers on building a GPS and compass navigation system using an Arduino Uno microcontroller, a GY-GPS6MV2 GPS receiver, a 128x64 OLED display, and an MPU9250 (specifically utilizing the magnetometer feature). 
+                          The system is designed to retrieve real-time geolocation data and heading direction, then display this information visually on the OLED screen.
                         </p>
                         <p>
-                            The windmill serves both educational and entertainment purposes, making it suitable for 
-                            interactive learning environments. By integrating a gear train and a compact generator, 
-                            this model effectively illustrates key engineering concepts such as energy conversion, aerodynamics, 
-                            and mechanical design.
+                            To understand the core principles of interfacing and working with the GPS module, the following guide was used: </p>
+                          <p>  <a href="">How to Add GPS to an Arduino – Core Electronics </a> </p>
+                          <p> This resource provided foundational insights into GPS communication protocols (particularly NMEA sentences), parsing data using libraries, and general hardware integration considerations.
                         </p>
                     </div>
                 </div>
@@ -138,38 +135,28 @@
                 <h2 class="section-title">Technical Challenges</h2>
             </div>
             <div class="main-content">
-                <h3>Gear Train Design</h3>
+                <h3>Mechanical Design</h3>
                 <p>
                     Designing a compact and efficient gear train was essential to increase the torque
                     delivered to the motor while minimizing energy loss. 
                     Proper meshing and alignment of gears required precise tolerances to ensure smooth operation.
                 </p>
 
-                <div class="image-gallery">
-                    <div class="gallery-image">
-			<img src="../assets/windmill/gear_train.png" alt="Gear Train Design">
-                        </div>
-                    </div>
-                </div>
-                
-                <h3>Creating an Assembly</h3>
+                                
+                <h3>Software</h3>
                 <p>
-                    The assembly involved multiple custom parts—blades, gears, shaft supports, and the housing. 
-                    Managing clearances, ensuring component compatibility, and allowing for ease of maintenance 
-                    posed significant design constraints.
+                 Integrating multiple libraries (e.g., TinyGPS++, Wire, Adafruit_SSD1306, Adafruit_GFX, and libraries for MPU9250) introduced compatibility issues, particularly regarding I2C bus conflicts and memory limitations of the Arduino Uno.
+                </p>
+                <p>
+                Some GPS parsing libraries were too heavy or had conflicts with OLED display rendering when used together with the magnetometer drivers.
                 </p>
                 
-                <h3>Ensuring Proper Energy Generation and Transfer</h3>
+                <h3>Magnetometer Calibration</h3>
                 <p>
-                    The shape, pitch, and angle of the windmill blades were optimized to capture wind efficiently 
-                    and transfer rotational motion effectively to the motor shaft. Achieving a balance between 
-                    aerodynamic efficiency and manufacturability was key.
+                    The MPU9250’s magnetometer required careful calibration to eliminate hard and soft iron distortions.
                 </p>
 
-                <div class="image-gallery">
-                    <div class="gallery-image">
-                	 <img src="../assets/windmill/blades.png" alt="Blade Design">
-		    </div>
+         </div> 
                     </div>
                 </div>
             </div>
@@ -184,10 +171,10 @@
             </div>
             <div class="main-content">
                 <ul class="features-list">
-                    <li>Using affordable materials such as wood and plastic, making the production affordable</li>
-                    <li>Combining education and entertainment</li>
-                    <li>Easy assembly, few components, suitable for kids of any age</li>
-                    <li>Integration of motor which ensures further exploration of the concept of energy</li>
+                    <li>Real-time display of latitude, longitude, and derived location data on a 128x64 OLED screen.</li>
+                    <li>Displays heading angle based on magnetometer data, pointing to magnetic North.</li>
+                    <li>Compact and readable data layout designed for small resolution without clutter.</li>
+                    <li>Optimized to run within the memory limits of the Arduino Uno.</li>
                 </ul>
             </div>
         </div>
@@ -200,19 +187,27 @@
                 <h2 class="section-title">Development Process</h2>
             </div>
             <div class="main-content">
-                <h3>Phase 1: Requirements Analysis</h3>
+                <h3>Phase 1: Hardware Integration</h3>
                 <p>
-                    Identified key learning outcomes: energy conversion, basic mechanics, and assembly skills.
-                    Set constraints for cost, safety, and simplicity.
+                   The GPS module was connected to pins 2 and 3 to not interfere with USB connection of the Uno.
+                The MPU9250 and OLED shared the I2C bus, requiring careful address management.
+                Power consumption and signal integrity were managed using decoupling capacitors and proper wire lengths.                
                 </p>
-                
-                <h3>Phase 2: System Design</h3>
+                   <div class="gallery-image">
+	              		<img src="../assets/gps-system/prototype.jpg" alt="Front View" height=500px>
+                        </div>
+
+                <h3>Phase 2: Software Implementation</h3>
                 <p>
-                    Designed 3D models of blades, base, gear train, and enclosure using CAD software.
-                    Selected materials based on cost, availability, and ease of manufacturing.
-                </p>
+                    TinyGPS++ was used for parsing NMEA sentences efficiently.
+
+                    Minimal graphics libraries were used to control the OLED.
+
+                    Magnetometer values were read over I2C using a modified MPU9250 library.
+
+                    Code was developed iteratively, starting with individual module testing (GPS, OLED, then magnetometer), followed by integration and optimization.                </p>
                 
-                <h3>Phase 3: Prototyping & Testing</h3>
+                <h3>Phase 3: Debugging and Tuning</h3>
                 <p>
                     Tested the system under a controlled wind source (fan).
                     Refined blade angles and gear ratios for optimal performance.
@@ -235,20 +230,18 @@
                 </p>
                 <div class="image-gallery">
                     <div class="gallery-image">
-                	<img src="../assets/windmill/isometric.png" alt="Isometric View">
-		    </div>
-                    </div>
+                	<img src="../assets/gps-system/outside.jpg" alt="Isometric View">
+		                </div>
+                    
                     <div class="gallery-image">
-                        <img src="../assets/windmill/side.png" alt="Side View">	    
-		    </div>
+                      <img src="../assets/gps-system/zoomed.jpg" alt="Side View">	    
+		                </div>
 
-                    </div>
                     <div class="gallery-image">
-			<img src="../assets/windmill/front.png" alt="Front View">
+	              		<img src="../assets/gps-system/soldered-final.jpg" alt="Front View">
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
