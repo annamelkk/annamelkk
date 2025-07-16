@@ -209,8 +209,8 @@
 
         .project-category {
             display: inline-block;
-            background: var(--mech-pink);
-            color: var(--bg-color);
+            background: var(--border);
+            color: var(--text-secondary);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -303,7 +303,7 @@
         .project-icon {
             width: 120px;
             height: 120px;
-            color: var(--mech-pink);
+            color: var(--accent);
             animation: rotate 20s linear infinite;
         }
 
