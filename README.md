@@ -5,7 +5,7 @@
 
 ###
 
-<p align="left">My name is Anna and I'm an Electrical engineer (aspiring) :)</p>
+<p align="left">My name is Anna and I'm an Electrical engineer :)</p>
 
 ###
 
